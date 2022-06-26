@@ -6,7 +6,7 @@ public class CardDatabase : MonoBehaviour
 {
     public static CardDatabase _instance;
 
-    public List<GameObject> cardList = new List<GameObject>();
+    public List<Card> cardList = new List<Card>();
 
     void Awake()
     {

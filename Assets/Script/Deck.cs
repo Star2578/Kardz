@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
-    public List<GameObject> deck = new List<GameObject>();
-    public List<GameObject> container = new List<GameObject>();
+    public List<Card> deck = new List<Card>();
+    public List<Card> container = new List<Card>();
     public int deckSize = 40;
 
-    private List<GameObject> deckInfo = new List<GameObject>();
+    private List<Card> deckInfo = new List<Card>();
     
     private void Start()
     {
@@ -49,12 +49,13 @@ public class Deck : MonoBehaviour
             return;
         }
 
-        var newCard = Instantiate(deck[0]);
+        var newCard = Instantiate(GameManager.instance.cardPf);
         var hand = GameObject.FindGameObjectWithTag("Hand");
 
         newCard.SetActive(true);
         newCard.transform.SetParent(hand.transform);
-        // newCard.GetComponent<RectTransform>().localScale = Vector3.one;
+        newCard.GetComponent<CardDisplay>().card = deck[0];
+        newCard.GetComponent<RectTransform>().localScale = Vector3.one;
         newCard.GetComponent<RectTransform>().sizeDelta = GameManager.instance.cardSummonedPf.GetComponent<RectTransform>().sizeDelta;
         newCard.GetComponent<RectTransform>().localScale = GameManager.instance.cardSummonedPf.GetComponent<RectTransform>().localScale;
         newCard.GetComponent<RectTransform>().position = GameManager.instance.cardSummonedPf.GetComponent<RectTransform>().position;

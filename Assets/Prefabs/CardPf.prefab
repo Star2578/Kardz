@@ -1019,7 +1019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2499069885041785709
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1075,7 +1075,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveUp: {fileID: 1105603070438335154}
-  turnManager: {fileID: 0}
   setParentTo: {fileID: 0}
   placeHolderParent: {fileID: 0}
 --- !u!95 &6639830756362766714
