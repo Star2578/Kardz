@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf48788d46b44e4caa7a1561a4199bd, type: 3}
   m_Name: Garen
   m_EditorClassIdentifier: 
-  id: 2
   typeOfCard:
     serializedVersion: 2
     m_Bits: 2048
+  cardTypes: 00
+  regions: 00
+  creatureTypes: 00
+  id: 2
   cardName: Garen
   cost: 6
   attack: 6
   health: 6
   description: My heart and sword for Demacia.
   artwork: {fileID: 21300000, guid: 95ca4aed05f28c745947d38857aeaa63, type: 3}
+  waitTurn: 1

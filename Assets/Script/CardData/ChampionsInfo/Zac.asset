@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf48788d46b44e4caa7a1561a4199bd, type: 3}
   m_Name: Zac
   m_EditorClassIdentifier: 
-  id: 1
   typeOfCard:
     serializedVersion: 2
     m_Bits: 2048
+  cardTypes: 00
+  regions: 01
+  creatureTypes: 00
+  id: 1
   cardName: Zac
   cost: 3
   attack: 2
   health: 4
   description: It's alive!?
   artwork: {fileID: 21300000, guid: 4c3af66efed8ad245adefd803cbed832, type: 3}
+  waitTurn: 1

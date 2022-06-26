@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf48788d46b44e4caa7a1561a4199bd, type: 3}
   m_Name: Draven
   m_EditorClassIdentifier: 
-  id: 10
   typeOfCard:
     serializedVersion: 2
     m_Bits: 2048
+  cardTypes: 00
+  regions: 02
+  creatureTypes: 00
+  id: 10
   cardName: Draven
   cost: 2
   attack: 3
   health: 1
   description: Let the show BEGIN!
   artwork: {fileID: 21300000, guid: d8d4b4d08a7e8f84ba5573d84449d150, type: 3}
+  waitTurn: 1

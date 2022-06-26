@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf48788d46b44e4caa7a1561a4199bd, type: 3}
   m_Name: Aphelios
   m_EditorClassIdentifier: 
-  id: 9
   typeOfCard:
     serializedVersion: 2
     m_Bits: 2048
+  cardTypes: 00
+  regions: 07
+  creatureTypes: 00
+  id: 9
   cardName: Aphelios
   cost: 4
   attack: 1
   health: 4
   description: Moon Weapon is Greatest
   artwork: {fileID: 21300000, guid: 328269c62b5d44a4e9db4a47cad36d86, type: 3}
+  waitTurn: 1

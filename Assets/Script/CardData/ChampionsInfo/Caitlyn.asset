@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf48788d46b44e4caa7a1561a4199bd, type: 3}
   m_Name: Caitlyn
   m_EditorClassIdentifier: 
-  id: 11
   typeOfCard:
     serializedVersion: 2
     m_Bits: 2048
+  cardTypes: 00
+  regions: 01
+  creatureTypes: 00
+  id: 11
   cardName: Caityln
   cost: 3
   attack: 3
   health: 3
   description: Fire.
   artwork: {fileID: 21300000, guid: 8168157a31ed6944fbe7d120f298cbeb, type: 3}
+  waitTurn: 1
