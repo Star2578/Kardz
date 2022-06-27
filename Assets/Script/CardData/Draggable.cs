@@ -77,34 +77,41 @@ public class Draggable : MonoBehaviour, IBeginDragHandler , IDragHandler, IEndDr
         // Debug.Log("EndDrag");
         GameManager.instance.canLook = true;
 
-        this.transform.SetParent(setParentTo);
+        if (setParentTo == GameManager.instance.dropZone)
+        {
+            var cardCost = this.GetComponent<CardDisplay>().card.cost;
+            if (cardCost <= GameManager.instance.currMana)
+            {
+                GameManager.instance.currMana -= cardCost;
+
+                Destroy(gameObject);
+                var containCard = this.GetComponent<CardDisplay>().card;
+                var summon = Instantiate(GameManager.instance.cardSummonedPf);
+
+                summon.SetActive(true);
+                summon.transform.SetParent(GameManager.instance.dropZone);
+                summon.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
+                summon.GetComponent<CardDisplay>().card = containCard;
+                summon.GetComponent<RectTransform>().sizeDelta = GameManager.instance.cardSummonedPf.GetComponent<RectTransform>().sizeDelta;
+                summon.GetComponent<RectTransform>().localScale = GameManager.instance.cardSummonedPf.GetComponent<RectTransform>().localScale;
+                summon.GetComponent<RectTransform>().position = GameManager.instance.cardSummonedPf.GetComponent<RectTransform>().position;
+            }
+        }
+        this.transform.SetParent(GameObject.FindGameObjectWithTag("Hand").transform);
         this.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
         GetComponent<CanvasGroup>().blocksRaycasts = true;
         Destroy(placeHolder);
+    }
 
-        if (this.transform.parent == GameManager.instance.dropZone)
+    private void CheckCardType(Card cardInfo)
+    {
+        if (!cardInfo.cardTypes.Contains(CardType.SPELL))
         {
-            var summon = Instantiate(GameManager.instance.cardSummonedPf);
-
-            summon.SetActive(true);
-            summon.transform.SetParent(this.transform.parent);
-            summon.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
-            summon.GetComponent<CardDisplay>().card = this.GetComponent<CardDisplay>().card;
-            summon.GetComponent<RectTransform>().sizeDelta = GameManager.instance.cardSummonedPf.GetComponent<RectTransform>().sizeDelta;
-            summon.GetComponent<RectTransform>().localScale = GameManager.instance.cardSummonedPf.GetComponent<RectTransform>().localScale;
-            summon.GetComponent<RectTransform>().position = GameManager.instance.cardSummonedPf.GetComponent<RectTransform>().position;
-            Destroy(gameObject);
-
-            var cardCost = summon.GetComponent<CardDisplay>().card.cost;
-            if (cardCost <= GameManager.instance.currMana)
-            {
-                summon.SendMessage("Summon");
-                GameManager.instance.currMana -= cardCost;
-            }
-            else
-            {
-                summon.SendMessage("ReturnToHand", summon.GetComponent<CardDisplay>().card);
-            }
+            // summon
+        }
+        else
+        {
+            // cast
         }
     }
 }
