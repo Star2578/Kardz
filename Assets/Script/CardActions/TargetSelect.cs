@@ -21,7 +21,7 @@ public class TargetSelect : MonoBehaviour
             GameManager.instance.isActive = false;
         }
 
-        if (Input.GetMouseButtonDown(0) && choosed != null)
+        if (Input.GetMouseButtonDown(0) && choosed != null && GameManager.instance.isActive)
         {
             var targetContainer = GameManager.instance.targetContainer;
 
