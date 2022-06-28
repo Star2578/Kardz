@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Entity : MonoBehaviour
+public class Entity : MonoBehaviourPunCallbacks
 {
     [Header("Stats")]
     public int health = 0;
@@ -10,7 +11,6 @@ public class Entity : MonoBehaviour
 
     [Header("Targeting Arrow")]
     public Target casterType;
-    public Transform spawnOffset;
     [HideInInspector] public bool isTargeting = false;
     [HideInInspector] public GameObject arrowObject;
 
