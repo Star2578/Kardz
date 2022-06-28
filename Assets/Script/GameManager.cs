@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     [Header("Graveyard")]
     public List<Card> graveyardPlayer = new List<Card>();
     public List<Card> graveyardEnemy = new List<Card>();
+    [HideInInspector] public bool isOurTurn;
     [HideInInspector] public bool isActive;
     [HideInInspector] public bool canLook = true;
 }

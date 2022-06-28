@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Target : byte { OWNER, OPPONENT, FRIENDLIES, ENEMIES, RANDOM, ALL }
+
 public class TargetSelect : MonoBehaviour
 {
     private GameObject sentFrom;
