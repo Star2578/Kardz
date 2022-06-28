@@ -24,4 +24,12 @@ public class Networking : NetworkManager
     {
         Debug.Log("Disconnected from Server");
     }
+
+    public override void OnServerAddPlayer(NetworkConnectionToClient conn)
+    {
+        Transform startPos = GetStartPosition();
+        GameObject player = Instantiate(playerPrefab);
+
+        NetworkServer.AddPlayerForConnection(conn, player);
+    }
 }
